@@ -1,0 +1,11 @@
+Project-1:
+  name: Anusha
+  role: Devops Engineer
+Project-2:
+  name: Ganesh
+  role: Cloud Engineer
+tools:
+  - Git
+  - Docker
+  - Kubernetes
+#trying out my first yaml 
