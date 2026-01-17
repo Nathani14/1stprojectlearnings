@@ -22,7 +22,7 @@ df -h | tee -a "$LOG_FILE"
 echo "" | tee -a "$LOG_FILE"
 echo "Cleaning logs older than $DAYS_TO_KEEP days..." | tee -a "$LOG_FILE"
 
-find "$LOG_DIR" -type f -name "run-*.log" -mtime +$DAYS_TO_KEEP -print -delete | tee -a "$LOG_FILE"
+find "$LOG_DIR" -type f -name "run-*.log" -mtime +$DAYS_TO_KEEP -print -delete || true | tee -a "$LOG_FILE"
 
 echo "Cleanup complete." | tee -a "$LOG_FILE"
 echo "Log written to: $LOG_FILE" | tee -a "$LOG_FILE"
