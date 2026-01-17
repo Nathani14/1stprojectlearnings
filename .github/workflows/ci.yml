@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - exercise-log-cleanup
   workflow_dispatch: {}
 
 jobs:
