@@ -1,21 +1,29 @@
-name: Run Bash Script
+name:Log Cleanup CI
 
 on:
   push:
     branches:
       - master
+  workflow_dispatch:
 
 jobs:
-  run-script:
+  run-log-cleanup:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Make script executable
-        run: chmod +x myscript.sh
+        run: chmod +x log_cleanup.sh
 
-      - name: Run bash script
-        run: ./myscript.sh
+      - name: Run log cleanup script
+        run: ./log_cleanup.sh
+     
+      - name: Upload logs as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: logs
+          path: logs/
+
 
